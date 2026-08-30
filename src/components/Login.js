@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
 const API_URL =
-    'https://instagram-clone-odf4yfrh7-areebaaijaz537.vercel.app/';
+    'https://instagram-clone-backend-6kes2m7bk-areebaaijaz537.vercel.app';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -28,7 +28,6 @@ const Login = () => {
         }));
     };
 
-    // Login API
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -46,7 +45,6 @@ const Login = () => {
 
             console.log('Login Response:', response.data);
 
-            // Login successful
             navigate('/home');
 
         } catch (error) {
@@ -61,7 +59,6 @@ const Login = () => {
             setIsLoading(false);
         }
     };
-
     // Facebook login
     const handleFacebookLogin = () => {
         console.log('Facebook login clicked');

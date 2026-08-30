@@ -1,6 +1,11 @@
+// src/components/Signup.js
+
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Signup.css';
+
+const API_URL =
+    'https://instagram-clone-backend-6kes2m7bk-areebaaijaz537.vercel.app';
 
 const Signup = () => {
     const [formData, setFormData] = useState({
@@ -31,7 +36,7 @@ const Signup = () => {
 
         try {
             const response = await axios.post(
-                   `${API_URL}/api/auth/signup`,
+                `${API_URL}/api/auth/signup`,
                 formData
             );
 
@@ -44,8 +49,11 @@ const Signup = () => {
             });
 
         } catch (error) {
+            console.log('Signup Error:', error);
+
             setError(
-                error.response?.data?.message || 'Signup failed'
+                error.response?.data?.message ||
+                'Unable to connect to server'
             );
         } finally {
             setIsLoading(false);
@@ -93,11 +101,15 @@ const Signup = () => {
                     />
 
                     {error && (
-                        <p className="error-message">{error}</p>
+                        <p className="error-message">
+                            {error}
+                        </p>
                     )}
 
                     {message && (
-                        <p className="success-message">{message}</p>
+                        <p className="success-message">
+                            {message}
+                        </p>
                     )}
 
                     <button
