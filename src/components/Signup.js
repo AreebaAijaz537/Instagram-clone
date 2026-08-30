@@ -4,8 +4,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './Signup.css';
 
-const API_URL =
-    'https://instagram-clone-backend-drab.vercel.app';
+const API_URL = 'http://localhost:5000';
 
 const Signup = () => {
     const [formData, setFormData] = useState({

@@ -8,12 +8,14 @@ app.use(express.json());
 
 const users = [];
 
+// Test route
 app.get('/', (req, res) => {
     res.json({
         message: 'Instagram API is running'
     });
 });
 
+// Signup
 app.post('/api/auth/signup', (req, res) => {
     const { username, email, password } = req.body;
 
@@ -23,7 +25,9 @@ app.post('/api/auth/signup', (req, res) => {
         });
     }
 
-    const existingUser = users.find(user => user.email === email);
+    const existingUser = users.find(
+        user => user.email === email
+    );
 
     if (existingUser) {
         return res.status(409).json({
@@ -48,11 +52,14 @@ app.post('/api/auth/signup', (req, res) => {
     });
 });
 
+// Login
 app.post('/api/auth/login', (req, res) => {
     const { email, password } = req.body;
 
     const user = users.find(
-        user => user.email === email && user.password === password
+        user =>
+            user.email === email &&
+            user.password === password
     );
 
     if (!user) {
@@ -70,4 +77,14 @@ app.post('/api/auth/login', (req, res) => {
     });
 });
 
+// Local development
+const PORT = 5000;
+
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`Server running on http://localhost:${PORT}`);
+    });
+}
+
+// Export Express app for Vercel
 module.exports = app;
