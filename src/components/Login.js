@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
 const API_URL =
-    'https://instagram-clone-backend-6kes2m7bk-areebaaijaz537.vercel.app';
+    'https://instagram-clone-backend-drab.vercel.app';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -59,6 +59,7 @@ const Login = () => {
             setIsLoading(false);
         }
     };
+
     // Facebook login
     const handleFacebookLogin = () => {
         console.log('Facebook login clicked');

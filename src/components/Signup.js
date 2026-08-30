@@ -5,7 +5,7 @@ import axios from 'axios';
 import './Signup.css';
 
 const API_URL =
-    'https://instagram-clone-backend-6kes2m7bk-areebaaijaz537.vercel.app';
+    'https://instagram-clone-backend-drab.vercel.app';
 
 const Signup = () => {
     const [formData, setFormData] = useState({
@@ -21,10 +21,10 @@ const Signup = () => {
     const handleChange = (e) => {
         const { name, value } = e.target;
 
-        setFormData({
-            ...formData,
+        setFormData((prev) => ({
+            ...prev,
             [name]: value
-        });
+        }));
     };
 
     const handleSubmit = async (e) => {
@@ -40,7 +40,11 @@ const Signup = () => {
                 formData
             );
 
-            setMessage(response.data.message);
+            console.log('Signup Response:', response.data);
+
+            setMessage(
+                response.data.message || 'Account created successfully!'
+            );
 
             setFormData({
                 username: '',
@@ -55,6 +59,7 @@ const Signup = () => {
                 error.response?.data?.message ||
                 'Unable to connect to server'
             );
+
         } finally {
             setIsLoading(false);
         }
