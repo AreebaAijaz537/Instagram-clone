@@ -1,0 +1,261 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #fafafa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Main container */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 935px;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Left side - Phone section */
+.phone-section {
+    display: none; /* Hidden on mobile, shown on larger screens */
+    flex: 1;
+    margin-right: 30px;
+}
+
+.phone-mockup {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.phone-screen {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.phone-screen img {
+    width: 250px;
+    height: 500px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Right side - Form section */
+.form-section {
+    flex: 1;
+    max-width: 350px;
+    width: 100%;
+}
+
+/* Login Box */
+.login-box {
+    background: #ffffff;
+    border: 1px solid #dbdbdb;
+    border-radius: 8px;
+    padding: 40px 40px 30px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.logo {
+    font-family: 'Arial', sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    color: #262626;
+    margin-bottom: 30px;
+    letter-spacing: -1px;
+}
+
+/* Form inputs */
+.input-field {
+    width: 100%;
+    padding: 12px 10px;
+    margin-bottom: 8px;
+    background: #fafafa;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #262626;
+    transition: border-color 0.2s;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: #a8a8a8;
+}
+
+.input-field::placeholder {
+    color: #8e8e8e;
+    font-size: 13px;
+}
+
+/* Login button */
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    background: #0095f6;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s;
+}
+
+.login-btn:hover {
+    background: #1877f2;
+}
+
+.login-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Divider with OR */
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #dbdbdb;
+}
+
+.divider span {
+    padding: 0 18px;
+    color: #8e8e8e;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Facebook login */
+.facebook-login {
+    margin: 15px 0;
+}
+
+.facebook-login a {
+    color: #385185;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.facebook-login a:hover {
+    text-decoration: underline;
+}
+
+/* Forgot password */
+.forgot-password {
+    margin-top: 15px;
+}
+
+.forgot-password a {
+    color: #00376b;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+/* Signup Box */
+.signup-box {
+    background: #ffffff;
+    border: 1px solid #dbdbdb;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.signup-box p {
+    color: #262626;
+    font-size: 14px;
+}
+
+.signup-box a {
+    color: #0095f6;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signup-box a:hover {
+    text-decoration: underline;
+}
+
+/* App Store Buttons */
+.app-buttons {
+    text-align: center;
+}
+
+.app-buttons p {
+    color: #262626;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.store-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.app-store,
+.google-play {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #262626;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.app-store:hover,
+.google-play:hover {
+    background: #404040;
+}
+
+/* Responsive Design - Show phone on larger screens */
+@media (min-width: 875px) {
+    .phone-section {
+        display: block;
+    }
+}
+
+/* Mobile responsive */
+@media (max-width: 450px) {
+    .login-box {
+        padding: 30px 20px;
+        border: none;
+        background: transparent;
+    }
+    
+    .signup-box {
+        border: none;
+        background: transparent;
+    }
+}

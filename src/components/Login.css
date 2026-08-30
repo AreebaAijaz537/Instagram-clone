@@ -1,0 +1,384 @@
+/* src/components/Login.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #fafafa;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    max-width: 935px;
+    margin: 0 auto;
+    padding: 20px;
+    gap: 30px;
+}
+
+/* ===== LEFT SIDE - PHONE ===== */
+.phone-section {
+    display: none; /* Hidden on mobile */
+    flex: 1;
+}
+
+.phone-mockup {
+    display: flex;
+    justify-content: center;
+}
+
+.phone-screen {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.phone-screen img {
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* ===== RIGHT SIDE - FORMS ===== */
+.form-section {
+    flex: 1;
+    max-width: 350px;
+    width: 100%;
+}
+
+/* Login Box */
+.login-box {
+    background: #ffffff;
+    border: 1px solid #dbdbdb;
+    border-radius: 8px;
+    padding: 40px 40px 30px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.logo {
+    font-family: 'Arial', sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    color: #262626;
+    margin-bottom: 30px;
+    letter-spacing: -1px;
+}
+
+/* Input Fields */
+.input-field {
+    width: 100%;
+    padding: 12px 10px;
+    margin-bottom: 8px;
+    background: #fafafa;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #262626;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: #a8a8a8;
+    background: #ffffff;
+}
+
+.input-field::placeholder {
+    color: #8e8e8e;
+    font-size: 13px;
+}
+
+/* Login Button */
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    background: #0095f6;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s;
+}
+
+.login-btn:hover {
+    background: #1877f2;
+}
+
+.login-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Error Message */
+.error-message {
+    color: #ed4956;
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+/* Divider */
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #dbdbdb;
+}
+
+.divider span {
+    padding: 0 18px;
+    color: #8e8e8e;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Facebook Login */
+.facebook-login {
+    margin: 15px 0;
+}
+
+.facebook-login a {
+    color: #385185;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.facebook-login a i {
+    font-size: 18px;
+}
+
+.facebook-login a:hover {
+    text-decoration: underline;
+}
+
+/* Forgot Password */
+.forgot-password {
+    margin-top: 15px;
+}
+
+.forgot-password a {
+    color: #00376b;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+/* Signup Box */
+.signup-box {
+    background: #ffffff;
+    border: 1px solid #dbdbdb;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.signup-box p {
+    color: #262626;
+    font-size: 14px;
+}
+
+.signup-box a {
+    color: #0095f6;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signup-box a:hover {
+    text-decoration: underline;
+}
+
+/* App Store Buttons */
+.app-buttons {
+    text-align: center;
+}
+
+.app-buttons p {
+    color: #262626;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.store-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.app-store,
+.google-play {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: #262626;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.app-store:hover,
+.google-play:hover {
+    background: #404040;
+}
+
+.app-store i,
+.google-play i {
+    font-size: 16px;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (min-width: 875px) {
+    .phone-section {
+        display: block;
+    }
+}
+
+@media (max-width: 874px) {
+    .container {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .form-section {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 450px) {
+    .login-box {
+        padding: 30px 20px;
+        border: none;
+        background: transparent;
+    }
+    
+    .signup-box {
+        border: none;
+        background: transparent;
+    }
+    
+    .container {
+        padding: 10px;
+    }
+}
+/* src/components/Login.css - Add these styles */
+
+/* Make buttons look like links */
+.link-button {
+    background: none;
+    border: none;
+    color: #385185;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: inherit;
+}
+
+.link-button:hover {
+    text-decoration: underline;
+}
+
+/* Facebook button specific */
+.facebook-button {
+    color: #385185;
+    font-size: 14px;
+}
+
+.facebook-button i {
+    font-size: 18px;
+}
+
+/* Signup link button */
+.signup-link-button {
+    color: #0095f6;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.signup-link-button:hover {
+    text-decoration: underline;
+}
+
+/* Forgot password button */
+.link-button.forgot-password-btn {
+    color: #00376b;
+    font-size: 12px;
+}
+
+/* Store buttons as buttons */
+.store-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: #262626;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-family: inherit;
+}
+
+.store-button:hover {
+    background: #404040;
+}
+
+.store-button i {
+    font-size: 16px;
+}
+
+/* Update the forgot password div */
+.forgot-password {
+    margin-top: 15px;
+}
+
+/* Update signup box */
+.signup-box p {
+    color: #262626;
+    font-size: 14px;
+}
+
+/* Update store buttons container */
+.store-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
