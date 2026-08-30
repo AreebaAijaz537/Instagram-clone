@@ -5,6 +5,9 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
+const API_URL =
+    'https://instagram-clone-backend-6kes2m7bk-areebaaijaz537.vercel.app';
+
 const Login = () => {
     const navigate = useNavigate();
 
@@ -19,7 +22,7 @@ const Login = () => {
     const handleChange = (e) => {
         const { name, value } = e.target;
 
-        setFormData(prev => ({
+        setFormData((prev) => ({
             ...prev,
             [name]: value
         }));
@@ -34,7 +37,7 @@ const Login = () => {
 
         try {
             const response = await axios.post(
-                'http://localhost:5000/api/auth/login',
+                `${API_URL}/api/auth/login`,
                 {
                     email: formData.username,
                     password: formData.password
@@ -43,14 +46,15 @@ const Login = () => {
 
             console.log('Login Response:', response.data);
 
-            // Go to Home after successful login
+            // Login successful
             navigate('/home');
 
         } catch (error) {
             console.log('Login Error:', error);
 
             setError(
-                error.response?.data?.message || 'Login failed'
+                error.response?.data?.message ||
+                'Unable to connect to server'
             );
 
         } finally {
@@ -182,7 +186,6 @@ const Login = () => {
                         >
                             Sign up
                         </button>
-
                     </p>
                 </div>
 
