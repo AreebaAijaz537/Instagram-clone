@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
 const API_URL =
-    'https://instagram-clone-backend-6kes2m7bk-areebaaijaz537.vercel.app';
+    'https://instagram-clone-odf4yfrh7-areebaaijaz537.vercel.app/';
 
 const Login = () => {
     const navigate = useNavigate();
