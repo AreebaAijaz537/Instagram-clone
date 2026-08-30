@@ -9,13 +9,13 @@ app.use(express.json());
 const users = [];
 
 app.get('/', (req, res) => {
-    res.send('Instagram API is running');
+    res.json({
+        message: 'Instagram API is running'
+    });
 });
 
 app.post('/api/auth/signup', (req, res) => {
     const { username, email, password } = req.body;
-
-    console.log('Signup request:', username, email);
 
     if (!username || !email || !password) {
         return res.status(400).json({
@@ -39,8 +39,6 @@ app.post('/api/auth/signup', (req, res) => {
 
     users.push(newUser);
 
-    console.log('User registered:', email);
-
     res.status(201).json({
         message: 'Signup successful',
         user: {
@@ -53,8 +51,6 @@ app.post('/api/auth/signup', (req, res) => {
 app.post('/api/auth/login', (req, res) => {
     const { email, password } = req.body;
 
-    console.log('Login request:', email);
-
     const user = users.find(
         user => user.email === email && user.password === password
     );
@@ -64,8 +60,6 @@ app.post('/api/auth/login', (req, res) => {
             message: 'Invalid email or password'
         });
     }
-
-    console.log('Login successful:', email);
 
     res.json({
         message: 'Login successful',
